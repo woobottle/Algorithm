@@ -11,4 +11,4 @@ def check n
   array[n]
 end
 n = gets.to_i
-print check(n)
+print check(n) 
