@@ -6,4 +6,4 @@ scale_out을 통해 여러 대의 서버로 트래픽을 균등하게 분산해�
 
 https://post.naver.com/viewer/postView.nhn?volumeNo=27046347&memberNo=2521903 -> 정리하기
 
-출처 : https://post.naver.com/viewer/postView.nhn?volumeNo=27046347&memberNo=2521903
+출처 : https://post.naver.com/viewer/postView.nhn?volumeNo=27046347&memberNo=2521903 
