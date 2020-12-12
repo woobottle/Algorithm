@@ -10,3 +10,4 @@ if(nrray[n-1] - nrray[n-2] == nrray[n-2] - nrray[n-3]) :
   print(nrray[n-1] + nrray[1] - nrray[0])
 else :
   print(int(nrray[n-1] * nrray[1] / nrray[0]))
+  
