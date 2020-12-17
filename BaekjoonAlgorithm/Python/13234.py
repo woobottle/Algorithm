@@ -1,0 +1,10 @@
+n = input()
+
+if n == "true AND true" : print("true")
+elif n == "true AND false" : print("false")
+elif n == "false AND true" : print("false")
+elif n == "false AND false" : print("false")
+elif n == "true OR true" : print("true")
+elif n == "false OR true" : print("true")
+elif n == "true OR false" : print("true")
+elif n == "false OR false" : print("false")
