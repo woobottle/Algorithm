@@ -12,3 +12,4 @@ for i in range(5, 100001) :
 for i in range(n) :
   t = int(input())
   print(d[t])
+ 
