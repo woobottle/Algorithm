@@ -8,7 +8,6 @@ for _ in range(m) :
   start, end, cost = map(int, input().split())
   graph[start].append([end, cost])
 
-
 def dijkstra(start) :
   distance = [INF] * (n+1)
   distance[start] = 0
