@@ -34,39 +34,3 @@ for _ in range(T) :
         dfs(i, j, N, M)
         count += 1
   print(count)
-
-# import sys 
-# r = sys.stdin.readline
-
-# dx = [-1, 0, 1, 0]
-# dy = [0, 1, 0, -1]
-
-# def dfs(x, y, m, n) :
-#   for k in range(4) :
-#     nx = x + dx[k]
-#     ny = y + dy[k]
-
-#     if(0 <= nx < n) and (0 <= ny < m) :
-#       if not visited[nx][ny] and arr[nx][ny] == 1 :
-#         visited[nx][ny] = True
-#         dfs(nx, ny, m, n)
-
-# arr = [[0] * 50 for _ in range(50)]
-# visited = [[0] * 50 for _ in range(50)]
-# T = int(input())
-# for _ in range(T) :
-#   M, N, K = map(int, r().split())
-#   arr = [[0] * M for _ in range(N)]
-#   visited = [[False] * M for _ in range(N)]
-#   for _ in range(K) :
-#     a,b = map(int, r().split())
-#     arr[a][b] = 1
-
-#   count = 1
-#   for i in range(N) :
-#     for j in range(M) :
-#       if not visited[i][j] and arr[i][j] == 1 :
-#         visited[i][j] = True
-#         dfs(i,j,M,N)
-#         cnt += 1
-#   print(count)
