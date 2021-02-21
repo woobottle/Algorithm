@@ -1,42 +1,42 @@
 from collections import deque
 
-dx = [1, -1, 0, 0]
-dy = [0, 0, 1, -1]
+mx = [1, -1, 0, 0]
+my = [0, 0, 1, -1]
 
-def check(l) :
-  for i in range(3) :
-    for j in range(3) :
-      if(i == 2 and j == 2) : continue
-      if(l[i][j] == ((j+1) + ((i) * 3))) : 
-        continue
-      else : 
-        return False
-  return True
+def check(array) :
+  if("".join(array) == "123456780") :
+    return True
+  return False
 
-def graph_check(x, y, l) :
+def bfs(array) :
   q = deque()
-  q.append([x,y])
+  q.append(array)
+  value_dict["".join(array)] = 0
   while q :
-    c_x, c_y = q.popleft()
+    temp_array = q.popleft()
+    c_x = temp_array.index("0") // 3
+    c_y = temp_array.index("0") % 3
     for i in range(4) :
-      n_x = c_x + dx[i]
-      n_y = c_y + dy[i]
-      if(0<=n_x<3 and 0<=n_y<3) :
-        q.append([n_x, n_y])
+      n_x = c_x + mx[i]
+      n_y = c_y + my[i]
+      if(0<= n_x < 3 and 0 <= n_y < 3) :
+        curr_node = temp_array.index("0")
+        next_node = n_x * 3 + n_y
+        s_array = temp_array[:]
+        s_array[curr_node], s_array[next_node] = s_array[next_node], s_array[curr_node]
+        if(not "".join(s_array) in value_dict) :
+          q.append(s_array)
+          value_dict["".join(s_array)] = (value_dict.get("".join(temp_array)) + 1)
+          
+s_list = []
+value_dict = {}
 
-arr = []
-for _ in range(3) : 
-  arr.append(list(map(int, input().split())))
+for _ in range(3) :
+  for i in list(input().split()) : s_list.append(i)
 
-count = 0
+bfs(s_list)
 
-if not check(arr) :
-  for i in range(3) :
-    for j in range(3) :
-      if(arr[i][j] == 0) : 
-        graph_check(i, j, arr)
-
-if check(arr) :
-  print(count)
+if("123456780" in value_dict) :
+  print(value_dict.get("123456780"))
 else :
   print(-1)
