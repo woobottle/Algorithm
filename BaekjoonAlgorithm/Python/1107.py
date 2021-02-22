@@ -1,17 +1,33 @@
-from itertools import combinations
-from itertools import permutations
+def count(number) :
+  length_count = 0
+  if(number == 0) :
+    if(0 not in l) :
+      return 1
+    else :
+      return 1000000
+  while(number != 0) :
+    c = number % 10
+    if(c not in l) :
+      length_count += 1
+    else : 
+      return 100000000
+    number //= 10
+  return length_count
 
-curr = 100
 n = int(input())
 m = int(input())
-arr = [1] * 10
+l = [] 
 if m != 0 :
-  for i in list(map(int, input().split())) :
-    arr[i] = 0
-count = 0
+  l = list(map(int, input().split()))
 
-s = []
-for i in range(len(arr)) : 
-  if(arr[i] != 0) : s.append(i)
+answer = n - 100
+if(answer < 0) : answer = -answer
 
-arr = list(permutations(s, len(str(n))))
+for i in range(1000001) :
+  length = count(i)
+  remain = i - n
+  if(remain < 0) : remain = -remain
+  if(answer > remain + length) :
+    answer = remain + length
+
+print(answer)
