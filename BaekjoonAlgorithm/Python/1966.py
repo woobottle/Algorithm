@@ -1,11 +1,10 @@
 from collections import deque
 
 def check(q, target, array) :
-  count = 1
+  count = 0
   while True :
-    print(q)
     value, index = q.popleft()
-    if array[-1] == value :
+    if array[-1] == value and target != index :
       array.pop()
       count += 1
     elif(array[-1] == value and target == index) :
@@ -20,8 +19,7 @@ test_case = int(input())
 for _ in range(test_case) :
   n, m = map(int, input().split())
   arr = list(map(int, input().split()))
-  print(arr)
   l = deque()
   for i in range(len(arr)) :
     l.append([arr[i], i])
-  print(check(l, m, arr))
+  print(check(l, m, sorted(arr)))
