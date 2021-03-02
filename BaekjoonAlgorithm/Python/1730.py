@@ -18,7 +18,7 @@ for c in input() :
     vertical[x][y] = True; x-=1; vertical[x][y] = True
 
 for x in range(n) :
-  for y in range(n) :
+  for y in range(n) : 
     if(horizontal[x][y] and vertical[x][y]) : print("+", end = "")
     elif(horizontal[x][y]) : print("-", end = "")
     elif(vertical[x][y]) : print("|", end = "")
