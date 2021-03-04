@@ -5,7 +5,7 @@ vertical = [[False] * n for _ in range(n)]
 
 for c in input() :
   if c == "R" :
-    if y == n-1 : continue
+    if y == n-1 : continue 
     horizontal[x][y] = True; y+=1; horizontal[x][y] = True
   if c == "L" :
     if y == 0 : continue
