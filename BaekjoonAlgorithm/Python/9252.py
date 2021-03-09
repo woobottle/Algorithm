@@ -10,7 +10,7 @@ def findLcs(arr_first, arr_second, arr_global) :
         arr_global[i][j] = max(arr_global[i-1][j], arr_global[i][j-1])
   return arr_global[len(arr_first)-1][len(arr_second)-1]
 
-def getStr(x, y, arr_first, arr_second) :
+def getStr(x, y, arr_first, arr_second) : 
   if x == -1 or y == -1 :
     return ""
   elif arr_first[x] == arr_second[y] :
